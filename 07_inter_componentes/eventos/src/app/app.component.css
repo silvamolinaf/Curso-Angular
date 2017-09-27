@@ -1,0 +1,13 @@
+div {
+    width : 20%;
+    margin : 1em auto
+}
+img {
+    width: 100%
+}
+div.container {
+    width : 40%;
+    margin : 1em auto;
+    padding: 1em 2em;
+    background-color: papayawhip;
+}

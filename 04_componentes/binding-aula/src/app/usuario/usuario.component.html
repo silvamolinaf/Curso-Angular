@@ -1,0 +1,30 @@
+
+<form>
+  <p>
+    <label for="in-nombre">Dinos tu nombre</label>
+    <input type="text" id="in-nombre" name="in-nombre" 
+      [ngModel]="oUsuario.nombre" 
+      (ngModelChange) = 'oUsuario.nombre = $event'>
+  </p>
+  <p>
+    <label for="in-apellido">y tu apellido</label>
+    <input type="text" id="in-apellido" name="in-apellido" 
+      [(ngModel)]="oUsuario.apellido">
+  </p>
+  <button (click)="btnBorrar($event)">Borrar</button>
+  <p>
+    Hola {{oUsuario.nombre.toUpperCase()}} {{oUsuario.apellido}}.
+  </p><p>
+    {{oUsuario.nombre=='Pepe' ? 'Hola otra vez' : 'Bienvenido'}}
+  </p>
+  <p>
+  {{6 * 2}}  
+  </p>  
+  <p>
+    {{oUsuario | json}}
+  </p>  
+</form>
+
+<ul>
+    <li *ngFor = "let aficion of aAficiones; let i = index">{{aficion}} ({{i+1}})</li>
+</ul>

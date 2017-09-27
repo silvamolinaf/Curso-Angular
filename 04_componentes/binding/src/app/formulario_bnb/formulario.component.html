@@ -1,0 +1,10 @@
+<div>
+    <h2>Usando ngModelChange</h2>
+    <form action="">
+        <label for="nombre">Dime tu nombre </label>
+        <input type="text" id="nombre" name="nombre"
+            [(ngModel)] = "nombre">
+        <button (click)='btnBorrar($event)'>Borrar</button>
+    </form>
+    <p>Hola {{nombre.toUpperCase()}}</p>
+</div>

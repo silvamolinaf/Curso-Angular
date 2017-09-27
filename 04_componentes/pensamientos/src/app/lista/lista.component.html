@@ -1,0 +1,25 @@
+<p>EJEMPLO DE DIRECTIVAS ESTRUCTURALES</p>
+<p>
+  <label for="in-pesamiento">Pensamiento</label>
+  <input type="text" id="in-pensamiento" [(ngModel)]="pensamiento">
+</p>
+
+<button (click)="btnBorrar()">BORRAR</button>
+<button (click)="btnPensamientos()">Pensamientos</button>
+
+<div *ngIf="aPensamiento.length > 0; then okTemplate else koTemplate">
+</div>
+<ng-template #okTemplate>
+    <h2>
+      Pensamientos: 
+    </h2>
+    <ul>
+      <li *ngFor = "let pensamiento of aPensamiento; let i = index"> {{pensamiento}} </li>
+    </ul> 
+</ng-template>
+<ng-template #koTemplate>
+  <p> No ha escrito ninguna idea</p>
+</ng-template>
+
+
+
