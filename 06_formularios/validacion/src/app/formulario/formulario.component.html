@@ -1,5 +1,10 @@
 <form name="myform" novalidate (ngSubmit)="enviar()">
-
+<!-- 
+  - novalidate... es para que no use los mensajes de error de html, 
+    pero si los de angular 
+  - En el form no se debe anyadir el atributo action, se debe de 
+    usar la directiva ngSubmit 
+-->
   <p>
     <!--Etiqueta / Campo "Mombre"-->						
     <label for="firstname">Nombre</label>

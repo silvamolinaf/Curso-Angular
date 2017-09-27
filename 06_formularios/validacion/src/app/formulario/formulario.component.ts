@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-
-interface Usuario {
-  firstname: string;
-  lastname: string;
-  phoneNumber: string;
-
-}
+import { Usuario } from '../modelo/usuario';
 
 @Component({
   selector: 'app-formulario',
