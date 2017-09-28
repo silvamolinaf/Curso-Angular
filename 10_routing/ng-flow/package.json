@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --o",
+    "start": "ng serve --preserve-symlinks",
     "build": "ng build",
     "prod": "ng build --prod",
     "test": "ng test",
