@@ -1,7 +1,7 @@
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 
-const URL = 'https://www.googleapis.com/books/v1/volumes?q=intitle:';
+const URL = 'http://restcountries.eu/rest/v1/region/';
 
 @Component({
   selector: 'app-buscar',
@@ -11,6 +11,7 @@ const URL = 'https://www.googleapis.com/books/v1/volumes?q=intitle:';
 export class BuscarComponent implements OnInit {
 
   public claveBusqueda: string;
+  public continentes = ['europe', 'africa', 'americas', 'oceania', 'asia'];
   public aResultados = new Array<any>();
   constructor(private http: Http) {
   }
@@ -22,16 +23,16 @@ export class BuscarComponent implements OnInit {
     this.aResultados = [];
     this.http.get(URL + this.claveBusqueda).subscribe(
       response => {
+              console.log(URL + this.claveBusqueda);
               const data = response.json();
-              if (!data.items === undefined) {
-                for (let i = 0; i < data.items.length; i++) {
-                  const bookTitle = data.items[i].volumeInfo.title;
-                  this.aResultados.push(bookTitle);
+                console.log(data);
+                for (let i = 0; i < data.length; i++) {
+                  const countryName = data[i].name;
+                  this.aResultados.push(countryName);
                 }
-              }
+
       },
       error => console.error(error)
     );
-
   }
 }
