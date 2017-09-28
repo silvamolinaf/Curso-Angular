@@ -11,26 +11,28 @@ const URL = 'http://restcountries.eu/rest/v1/region/';
 export class BuscarComponent implements OnInit {
 
   public claveBusqueda: string;
-  public continentes = ['europe', 'africa', 'americas', 'oceania', 'asia'];
+  public claveBusquedaCountry: string;
+  public capitalCountry: string;
+  public continentes: Array<string>;
   public aResultados = new Array<any>();
   constructor(private http: Http) {
   }
 
   ngOnInit() {
+    this.continentes = ['Europe', 'Africa', 'Americas', 'Oceania', 'Asia'];
   }
 
   btnBuscar() {
     this.aResultados = [];
     this.http.get(URL + this.claveBusqueda).subscribe(
       response => {
-              console.log(URL + this.claveBusqueda);
+              // console.log(URL + this.claveBusqueda);
               const data = response.json();
                 console.log(data);
                 for (let i = 0; i < data.length; i++) {
                   const countryName = data[i].name;
                   this.aResultados.push(countryName);
                 }
-
       },
       error => console.error(error)
     );
